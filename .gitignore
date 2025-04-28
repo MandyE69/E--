@@ -1,2 +1,2 @@
-/backend/node_modules
-/backend/database/connection.js
+node_modules
+database/connection.js
