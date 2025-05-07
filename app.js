@@ -1,32 +1,13 @@
-const express = require('express')
-const app = express()
-require("./database/connection")
+   
+   const express = require('express')
+   const app = express()
+   const bookRoute = require("./routes/bookRoutes")
 
-app.get("/books", (req,res)=>{
-   res.json({
-        name : "Its End with us",
-        author: "Hollow Cloves"
+   require("./database/connection")
+   app.use(express.json())
+
+   app.use("/api", bookRoute)
+
+   app.listen(4000, ()=>{
+      console.log("server/pustakalaya/node project has started at port 3000")
    })
-})
-
-app.post("/books", (req,res)=>{
-    res.json({
-       message: "received sucessfully"
-    })
- })
-
- app.patch("/books/:id", (req,res)=>{
-    res.json({
-        message: "updated sucessfully"
-     })
- })
-
- app.delete("/books/:id", (req,res)=>{
-    res.json({
-        message: "Deleted sucessfully"
-     })
- })
-
-app.listen(4000, ()=>{
-    console.log("server/pustakalaya/node project has started at port 3000")
-})

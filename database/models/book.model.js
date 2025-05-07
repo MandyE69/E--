@@ -1,5 +1,7 @@
 //books, bookAuthor, bookPrice, bookGenre, bookName
 
+const { type } = require("os");
+
 // const { type } = require("os")
 
 const bookModel = (sequelize, DataTypes)=>{
@@ -15,6 +17,9 @@ const bookModel = (sequelize, DataTypes)=>{
         bookAuthor :{
             type : DataTypes.STRING,    
             allowNull : false
+        },
+        bookGenres :{
+            type: DataTypes.STRING
         }
     })
    
